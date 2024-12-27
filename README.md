@@ -36,11 +36,6 @@ Below are the core API endpoints exposed by the backend:
   }
   ```
 
-- **GET /api/resume/results/:id**: Retrieve the analysis feedback for a given request.
-
-### User Management Endpoints
-- **GET /api/user/profile**: Retrieve the logged-in user's profile.
-- **PUT /api/user/update**: Update user profile information.
 
 ## Installation
 1. Clone the repository:
