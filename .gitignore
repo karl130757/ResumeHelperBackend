@@ -17,6 +17,7 @@ pids/
 # Dependency directories
 jspm_packages/
 
+
 # dotenv environment variables file
 .env
 
@@ -38,3 +39,6 @@ Thumbs.db
 # Build artifacts
 dist/
 build/
+
+# Ignore package-lock.json
+package-lock.json
