@@ -4,13 +4,10 @@ const fs = require('fs');
 const FormData = require('form-data');
 const path = require('path');
 
-async function processResume(file, job_description, job_title, job_skills, job_experience) {
+async function processResume(file, jobDescription) {
   const formData = new FormData();
-  formData.append('resume', fs.createReadStream(file.path));
-  formData.append('job_description', job_description || '');
-  formData.append('job_title', job_title || '');
-  formData.append('job_skills', job_skills || '');
-  formData.append('job_experience', job_experience || 0);
+  formData.append('resume_file', fs.createReadStream(file.path));
+  formData.append('job_description', jobDescription || '');
 
   
 
@@ -22,8 +19,8 @@ async function processResume(file, job_description, job_title, job_skills, job_e
       },
     });
 
-    console.log(response.data);
-    return response.data;
+   
+    return { analysisResult: response.data};
   } catch (error) {
     console.error('Error contacting Python microservice:', error.message);
     throw new Error('Error processing resume');
